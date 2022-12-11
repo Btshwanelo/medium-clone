@@ -64,7 +64,7 @@ export default function Home({ posts }: Props) {
 
 export const getServerSideProps = async () => {
   const query = `*[_type == "post"]{
-    id,
+    _id,
     title,
     author -> {
       name,
@@ -72,7 +72,9 @@ export const getServerSideProps = async () => {
     },
     description,
     mainImage,
-    slug
+    slug {
+      current
+    }
   }`;
 
   const posts = await sanityClient.fetch(query);
