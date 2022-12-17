@@ -52,7 +52,7 @@ function Post({post}: Props ){
       />
 
       <article className='max-w-3xl mx-auto p-5'>
-        <h1 className='text-3xl mt-10 mb-3'>{post.title}</h1>
+        <h1 className='text-3xl font-bold mt-10 mb-3'>{post.title}</h1>
         <h2 className='text-xl font-light text-gray-500 mb-2'>{post.description}</h2>
 
         <div className='flex items-center space-x-2'>
@@ -61,7 +61,7 @@ function Post({post}: Props ){
             src={urlFor(post.author.image).url()!}
             alt=''
           />
-          <p className='font-extralight text-sm  '>
+          <p className='text-sm'>
             Blog post by <span className='text-green-600'>{post.author.name}</span> - Published at {published}
           </p>
         </div>
@@ -97,7 +97,7 @@ function Post({post}: Props ){
         </div>
       ) : (      
       <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col p-5 max-w-2xl mx-auto mb-10'>
-        <h3 className='text-sm text-yellow-500'>Enjoyed This article?</h3>
+        <h3 className='text-sm font-medium text-yellow-500'>Enjoyed this article?</h3>
         <h4 className='text-3xl font-bold'>Leave a comment below!</h4>
         <hr className='py-3 mt-2' />
 
